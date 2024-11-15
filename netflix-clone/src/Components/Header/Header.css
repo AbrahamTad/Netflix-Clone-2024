@@ -1,0 +1,110 @@
+/* Header.css */
+
+/* Sticky Header Outer Container */
+.header_outer_container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(20, 20, 20); /* Dark background */
+  height: 10vh;
+  color: white;
+  transition: background-color 0.5s ease-in;
+  z-index: 1000;
+}
+
+/* Dark background when scrolling */
+.nav__black {
+  background-color: rgb(20, 20, 20);
+}
+
+/* Main Header Container */
+.header_container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* Header Left Section - Navigation Links */
+.header_left ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header_left ul li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Logo Styling */
+.header_left ul li img {
+  width: 100px; /* Adjust logo size */
+  height: auto;
+  display: block;
+}
+
+/* First Child (Logo) Margin */
+.header_left ul li:first-child {
+  margin-right: 30px; /* Extra space for the logo */
+}
+
+/* Navigation Text Styling */
+.header_left ul li {
+  color: #e5e5e5; /* Light grey color */
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.header_left ul li:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* Header Right Section - Icons */
+.header_right ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header_right ul li {
+  margin-left: 15px;
+  color: #e5e5e5; /* Light grey for icons */
+  cursor: pointer;
+  font-size: 1.2rem; /* Increase icon size */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on icons */
+.header_right ul li:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .header_container {
+    width: 95%;
+    padding: 5px 0;
+  }
+
+  .header_left ul {
+    flex-wrap: wrap;
+  }
+
+  .header_left ul li {
+    font-size: 0.8rem; /* Smaller text on mobile */
+    margin-right: 15px;
+  }
+
+  .header_right ul li {
+    font-size: 1rem; /* Adjust icon size for mobile */
+    margin-left: 10px;
+  }
+}
