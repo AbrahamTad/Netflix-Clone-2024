@@ -1,0 +1,78 @@
+/* Banner.css */
+
+/* Styles for the main banner container */
+.banner {
+  color: white; /* Text color */
+  object-fit: contain; /* Maintain aspect ratio */
+  height: 448px; /* Fixed height for the banner */
+  position: relative; /* Allows overlay effects */
+}
+
+/* Container for banner contents */
+.banner_contents {
+  position: absolute; /* Position content over the banner image */
+  top: 30%; /* Adjust vertical position */
+  left: 30px; /* Horizontal padding from the left */
+  width: 35%; /* Width for content, making it responsive */
+}
+
+/* Banner title styles */
+.banner_title {
+  font-size: 3rem; /* Large title font */
+  font-weight: 800; /* Bold title */
+  margin-bottom: 10px; /* Space below the title */
+  line-height: 1.2; /* Line spacing for readability */
+}
+
+/* Button container */
+.banner_buttons {
+  display: flex; /* Align buttons horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Styles for the play and my list buttons */
+.banner_button {
+  cursor: pointer; /* Pointer cursor for button */
+  color: #fff; /* Text color */
+  outline: none; /* No outline on focus */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding for size */
+  margin-right: 10px; /* Margin between buttons */
+  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
+  font-weight: 600; /* Bold text */
+  font-size: 1rem; /* Standard font size */
+  transition: all 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for buttons */
+.banner_button:hover {
+  color: #000; /* Change text color on hover */
+  background-color: #e6e6e6; /* Lighten background */
+}
+
+/* Description text for the banner */
+.banner_description {
+  width: 70%; /* Description width */
+  line-height: 1.3; /* Line spacing for readability */
+  padding-top: 1rem; /* Space above the description */
+  font-size: 1rem; /* Font size */
+  max-width: 360px; /* Maximum width */
+  height: 80px; /* Fixed height for consistent layout */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Indicate truncated text */
+}
+
+/* Fade effect at the bottom of the banner */
+.banner_fadeBottom {
+  position: absolute; /* Position over the banner */
+  bottom: 0; /* Align to bottom */
+  width: 100%; /* Full width */
+  height: 7.4rem; /* Height of the fade effect */
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  ); /* Gradient fade */
+}
