@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
-
 import requests from "../../utils/requests"; // API endpoints
 import "./Banner.css"; // Import CSS
 
@@ -11,12 +10,22 @@ function Banner() {
     (async () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
-        console.log(request);
+        console.log(request.data);
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
           ]
         );
+
+        //  const request = await axios.get(requests.fetchNetflixOriginals);
+        //  console.log("API Response:", request.data);
+
+        //  const results = request.data?.results || [];
+        //  if (results.length > 0) {
+        //    setMovie(results[Math.floor(Math.random() * results.length)]);
+        //  } else {
+        //    console.log("No results found");
+        //  }
       } catch (error) {
         console.log("Error fetching Netflix Originals:", error);
       }
@@ -43,7 +52,7 @@ function Banner() {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner_buttons">
-          <button className="banner_button">Play</button>
+          <button className="banner_button play">Play</button>
           <button className="banner_button">My List</button>
         </div>
 
