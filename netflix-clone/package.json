@@ -12,11 +12,18 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.7",
     "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "i18next": "^23.16.5",
+    "movie-trailer": "^3.2.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.1.1",
+    "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

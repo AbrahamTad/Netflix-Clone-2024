@@ -1,0 +1,97 @@
+/* Sticky Header Outer Container */
+.header_outer_container {
+  position: sticky;
+  top: 0;
+  background-color: transparent; /* Default transparent background */
+  height: 10vh;
+  color: white;
+  transition: background-color 0.5s ease-in;
+  z-index: 1000;
+}
+
+/* Dark background when scrolling */
+.nav__black {
+  background-color: rgb(20, 20, 20);
+}
+
+/* Main Header Container */
+.header_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Logo Styling */
+.logo {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Navbar Styling */
+.navbar-nav .nav-link {
+  color: #e5e5e5;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Dropdown Styling */
+#categories-dropdown .dropdown-item {
+  color: #e5e5e5;
+  background-color: rgb(20, 20, 20);
+}
+
+#categories-dropdown .dropdown-item:hover {
+  color: #ffffff;
+  background-color: #131010;
+}
+
+/* Icons Styling */
+.header_right .nav-link {
+  color: #e5e5e5;
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.header_right .nav-link:hover {
+  color: #ffffff;
+}
+
+.icon {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #ff0000; /* Netflix red color for hover effect */
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .header_container {
+    padding: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.8rem;
+    margin-right: 10px;
+  }
+
+  .header_right .nav-link {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
