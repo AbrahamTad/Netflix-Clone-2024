@@ -1,27 +1,38 @@
-/* Sticky Header Outer Container */
 .header_outer_container {
-  position: sticky;
-  top: 0;
-  background-color: transparent; /* Default transparent background */
-  height: 10vh;
-  color: white;
-  transition: background-color 0.5s ease-in;
-  z-index: 1000;
+  background-color: #141414; /* Netflix's black theme */
+  padding: 0.5rem 1rem;
+  
 }
 
-/* Dark background when scrolling */
-.nav__black {
-  background-color: rgb(20, 20, 20);
-}
 
-/* Main Header Container */
-.header_container {
-  width: 100%;
+
+.header_left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
 }
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Add spacing between icons */
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Add spacing between icons */
+}
+
+.header_right .icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.header_right .icon:hover {
+  color: #e50914; 
+}
+
 
 /* Logo Styling */
 .logo {
@@ -29,6 +40,7 @@
   height: auto;
   cursor: pointer;
 }
+
 
 /* Navbar Styling */
 .navbar-nav .nav-link {
@@ -59,6 +71,7 @@
   color: #e5e5e5;
   font-size: 1.5rem;
   margin-left: 15px;
+  
 }
 
 .header_right .nav-link:hover {
@@ -68,6 +81,7 @@
 .icon {
   transition: color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+ 
 }
 
 .icon:hover {
