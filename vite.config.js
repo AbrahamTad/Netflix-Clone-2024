@@ -7,7 +7,7 @@ export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return defineConfig({
-    base: "/netflix-clone/", // Ensure the base starts and ends with a slash
+    base: "netflix-clone",
     plugins: [react()],
     define: {
       "process.env": env,
