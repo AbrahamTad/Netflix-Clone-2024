@@ -109,3 +109,15 @@
     width: 80px;
   }
 }
+
+/* Default styling for .header_right */
+.header_right {
+  display: flex; /* or your default display style */
+}
+
+/* Hide .header_right icons for mobile screens */
+@media (max-width: 768px) {
+  .header_right {
+    display: none;
+  }
+}

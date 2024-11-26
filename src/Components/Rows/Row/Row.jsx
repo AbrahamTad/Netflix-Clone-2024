@@ -1,14 +1,20 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
+
 import { memo, useEffect, useState } from "react";
-import LazyLoad from "react-lazyload"; // Import LazyLoad
+import LazyLoad from "react-lazyload";
 import axios from "../../../utils/axios";
 import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
+
 import "./row2.css";
 
+// Define the Row component and wrap it with React.memo for performance optimization
 const Row = memo(({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
+  // Base URL for fetching images from the TMDB API
   const base_url = "https://image.tmdb.org/t/p/original";
 
   const opts = {
@@ -17,23 +23,22 @@ const Row = memo(({ title, fetchUrl, isLargeRow }) => {
     playerVars: { autoplay: 1 },
   };
 
+  // useEffect hook to fetch movies when the component mounts or fetchUrl changes
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const request = await axios.get(fetchUrl);
         const request = await axios.get(
           `${fetchUrl}&fields=id,title,poster_path,backdrop_path`
         );
-
         setMovies(request.data.results || []);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
     };
-
     fetchData();
-  }, [fetchUrl]);
+  }, [fetchUrl]); // Dependency array ensures this runs when fetchUrl changes
 
+  // Function to handle clicks on movie posters
   const handleClick = async (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
@@ -42,6 +47,7 @@ const Row = memo(({ title, fetchUrl, isLargeRow }) => {
         const url = await movieTrailer(
           movie?.title || movie?.name || movie?.original_name || ""
         );
+        // Extract the video ID (v) from the YouTube URL
         const urlParams = new URLSearchParams(new URL(url).search);
         setTrailerUrl(urlParams.get("v"));
       } catch (error) {
@@ -55,6 +61,7 @@ const Row = memo(({ title, fetchUrl, isLargeRow }) => {
       <h2>{title}</h2>
 
       <div className="row__posters">
+        {/* Map over the movies array and render each movie's poster */}
         {movies.map((movie) => (
           <LazyLoad key={movie.id} height={200} offset={100}>
             <img
@@ -75,6 +82,85 @@ const Row = memo(({ title, fetchUrl, isLargeRow }) => {
 });
 
 export default Row;
+
+/* eslint-disable react/display-name */
+// import { memo, useEffect, useState } from "react";
+// import LazyLoad from "react-lazyload"; // Import LazyLoad
+// import axios from "../../../utils/axios";
+// import movieTrailer from "movie-trailer";
+// import YouTube from "react-youtube";
+// import "./row2.css";
+
+// const Row = memo(({ title, fetchUrl, isLargeRow }) => {
+//   const [movies, setMovies] = useState([]);
+//   const [trailerUrl, setTrailerUrl] = useState("");
+
+//   const base_url = "https://image.tmdb.org/t/p/original";
+
+//   const opts = {
+//     height: "390",
+//     width: "100%",
+//     playerVars: { autoplay: 1 },
+//   };
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         // const request = await axios.get(fetchUrl);
+//         const request = await axios.get(
+//           `${fetchUrl}&fields=id,title,poster_path,backdrop_path`
+//         );
+
+//         setMovies(request.data.results || []);
+//       } catch (error) {
+//         console.error("Error fetching movies:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, [fetchUrl]);
+
+//   const handleClick = async (movie) => {
+//     if (trailerUrl) {
+//       setTrailerUrl("");
+//     } else {
+//       try {
+//         const url = await movieTrailer(
+//           movie?.title || movie?.name || movie?.original_name || ""
+//         );
+//         const urlParams = new URLSearchParams(new URL(url).search);
+//         setTrailerUrl(urlParams.get("v"));
+//       } catch (error) {
+//         console.error("Trailer not found:", error);
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className="row">
+//       <h2>{title}</h2>
+
+//       <div className="row__posters">
+//         {movies.map((movie) => (
+//           <LazyLoad key={movie.id} height={200} offset={100}>
+//             <img
+//               onClick={() => handleClick(movie)}
+//               className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
+//               src={`${base_url}${
+//                 isLargeRow ? movie.poster_path : movie.backdrop_path
+//               }`}
+//               alt={movie.title || movie.name || movie.original_name}
+//             />
+//           </LazyLoad>
+//         ))}
+//       </div>
+
+//       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+//     </div>
+//   );
+// });
+
+// export default Row;
 
 // import { useEffect, useState } from "react";
 // import axios from "../../../utils/axios"; // Importing axios instance

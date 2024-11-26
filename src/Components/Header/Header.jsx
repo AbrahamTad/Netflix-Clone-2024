@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./header2.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
@@ -26,7 +26,7 @@ const Header = () => {
       className="header_outer_container"
     >
       {/* Logo Section */}
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img src={NetflixLogo} alt="Netflix Logo" width="100" />
       </Navbar.Brand>
 
@@ -37,7 +37,7 @@ const Header = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         {/* Left Section */}
         <Nav className="header_left">
-          <Nav.Link href="#home">{t("home")}</Nav.Link>
+          <Nav.Link href="/">{t("home")}</Nav.Link>
           <Nav.Link href="#tvshows">{t("tvshows")}</Nav.Link>
           <Nav.Link href="#movies">{t("movies")}</Nav.Link>
           <Nav.Link href="#latest">{t("latest")}</Nav.Link>
@@ -57,8 +57,6 @@ const Header = () => {
 
         {/* Right Section */}
         <Nav className="header_right ms-auto">
-          {" "}
-          {/* Add ms-auto or ml-auto */}
           <Nav.Link href="#search">
             <SearchIcon className="icon" />
           </Nav.Link>
