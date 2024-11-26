@@ -14,7 +14,7 @@
 .row__posters {
   display: flex;
   overflow-y: hidden;
-  overflow-: scroll;
+  overflow-x: scroll;
   padding: 20px;
   /* Hide the scrollbar */
   scrollbar-width: none; /* Firefox */
@@ -36,8 +36,8 @@
 .row__posterLarge {
   max-height: 250px;
 }
-.row__posterLarge:hover{
-    transform: scale(1.09);
+.row__posterLarge:hover {
+  transform: scale(1.09);
 }
 
 .row__poster:hover {
