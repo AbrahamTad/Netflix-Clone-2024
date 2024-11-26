@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
+
 function App() {
   
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <div className="App">
         <Home />
+       
       </div>
      
     </>
